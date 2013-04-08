@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetLoggedInUserId">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetLoggedInUserIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetLoggedInUserIdResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLoggedInUserName">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetLoggedInUserNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLoggedInUserNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveScore">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="score" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveScoreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveScoreResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadScores">
+        <s:complexType />
+      </s:element>
+      <s:element name="LoadScoresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadScoresResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetLoggedInUserIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLoggedInUserId" />
+  </wsdl:message>
+  <wsdl:message name="GetLoggedInUserIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLoggedInUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLoggedInUserNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLoggedInUserName" />
+  </wsdl:message>
+  <wsdl:message name="GetLoggedInUserNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLoggedInUserNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveScoreSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveScore" />
+  </wsdl:message>
+  <wsdl:message name="SaveScoreSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveScoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadScoresSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadScores" />
+  </wsdl:message>
+  <wsdl:message name="LoadScoresSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadScoresResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DatabaseWebServiceSoap">
+    <wsdl:operation name="GetLoggedInUserId">
+      <wsdl:input message="tns:GetLoggedInUserIdSoapIn" />
+      <wsdl:output message="tns:GetLoggedInUserIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLoggedInUserName">
+      <wsdl:input message="tns:GetLoggedInUserNameSoapIn" />
+      <wsdl:output message="tns:GetLoggedInUserNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveScore">
+      <wsdl:input message="tns:SaveScoreSoapIn" />
+      <wsdl:output message="tns:SaveScoreSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadScores">
+      <wsdl:input message="tns:LoadScoresSoapIn" />
+      <wsdl:output message="tns:LoadScoresSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DatabaseWebServiceSoap" type="tns:DatabaseWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetLoggedInUserId">
+      <soap:operation soapAction="http://tempuri.org/GetLoggedInUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoggedInUserName">
+      <soap:operation soapAction="http://tempuri.org/GetLoggedInUserName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveScore">
+      <soap:operation soapAction="http://tempuri.org/SaveScore" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadScores">
+      <soap:operation soapAction="http://tempuri.org/LoadScores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DatabaseWebServiceSoap12" type="tns:DatabaseWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetLoggedInUserId">
+      <soap12:operation soapAction="http://tempuri.org/GetLoggedInUserId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoggedInUserName">
+      <soap12:operation soapAction="http://tempuri.org/GetLoggedInUserName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveScore">
+      <soap12:operation soapAction="http://tempuri.org/SaveScore" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadScores">
+      <soap12:operation soapAction="http://tempuri.org/LoadScores" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DatabaseWebService">
+    <wsdl:port name="DatabaseWebServiceSoap" binding="tns:DatabaseWebServiceSoap">
+      <soap:address location="http://localhost:52373/DatabaseWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DatabaseWebServiceSoap12" binding="tns:DatabaseWebServiceSoap12">
+      <soap12:address location="http://localhost:52373/DatabaseWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

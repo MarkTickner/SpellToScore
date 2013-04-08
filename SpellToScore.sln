@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F6DBC5E6-A225-4B51-B683-60A803EBBD79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpellToScore", "SpellToScore\SpellToScore.csproj", "{36D975FD-1677-4EA2-99FB-190E9E7D2276}"
+	ProjectSection(ProjectDependencies) = postProject
+		{036F1C11-EE7C-44CD-8FF6-9C404F924421} = {036F1C11-EE7C-44CD-8FF6-9C404F924421}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpellToScore.Web", "SpellToScore.Web\SpellToScore.Web.csproj", "{036F1C11-EE7C-44CD-8FF6-9C404F924421}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{36D975FD-1677-4EA2-99FB-190E9E7D2276}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36D975FD-1677-4EA2-99FB-190E9E7D2276}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36D975FD-1677-4EA2-99FB-190E9E7D2276}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36D975FD-1677-4EA2-99FB-190E9E7D2276}.Release|Any CPU.Build.0 = Release|Any CPU
+		{036F1C11-EE7C-44CD-8FF6-9C404F924421}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{036F1C11-EE7C-44CD-8FF6-9C404F924421}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{036F1C11-EE7C-44CD-8FF6-9C404F924421}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{036F1C11-EE7C-44CD-8FF6-9C404F924421}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
